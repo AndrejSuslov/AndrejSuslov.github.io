@@ -90,3 +90,35 @@ document.addEventListener('DOMContentLoaded', () => {
         track.style.transform = `translateX(0px)`;
     });
 });
+
+document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    
+    try {
+        const response = await fetch('https://getform.io/f/aollwnyb', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+            this.reset();
+            
+            const successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        } else {
+            throw new Error('Ошибка отправки формы');
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.');
+    }
+});
