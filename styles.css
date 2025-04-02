@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+html {
+    height: 100%;
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* Под затемнением */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Затемнение работает */
+    z-index: -1; /* Над видео, под контентом */
+}
+
+/* Шапка */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00b4d8;
+}
+
+/* Главная секция */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 24px;
+    max-width: 600px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Секция стратегии */
+.strategy {
+    padding: 100px 20px 50px;
+    text-align: center;
+    position: relative;
+}
+
+.strategy h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.strategy p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.strategy-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.strategy-item {
+    background: rgba(0, 0, 0, 0.7); /* Затемнение для блоков */
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.strategy-item:hover {
+    transform: scale(1.05);
+}
+
+.strategy-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.strategy-item p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Остальные стили для других страниц */
+.partner, .event, .item, .contact-item {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.partner:hover, .event:hover, .item:hover, .contact-item:hover {
+    transform: scale(1.05);
+}
+
+.partner h3, .event h3, .item h3, .contact-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.partner p, .event p, .item p, .contact-item p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Секции для других страниц */
+.partners, .history, .goods, .contacts {
+    padding: 100px 20px 50px;
+    text-align: center;
+    position: relative;
+}
+
+.partners h1, .history h1, .goods h1, .contacts h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.partners p, .history p, .goods p, .contacts p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.partners-list, .timeline, .goods-list, .contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.timeline {
+    flex-direction: column;
+    align-items: center;
+}
+
+.event {
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-item a {
+    color: #00b4d8;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}

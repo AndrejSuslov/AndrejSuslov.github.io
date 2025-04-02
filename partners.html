@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX - Партнёры</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video autoplay muted loop class="background-video">
+        <source src="spacex.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="partners.html">Партнёры</a></li>
+                <li><a href="history.html">История</a></li>
+                <li><a href="goods.html">Товары</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="strategy.html">Стратегия</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="partners">
+            <h1>Наши партнёры</h1>
+            <p>SpaceX сотрудничает с ведущими организациями для достижения космических высот.</p>
+            <div class="partners-list">
+                <div class="partner">
+                    <h3>NASA</h3>
+                    <p>Совместные миссии по доставке грузов и астронавтов на МКС.</p>
+                </div>
+                <div class="partner">
+                    <h3>Google</h3>
+                    <p>Технологическое сотрудничество для развития спутниковой связи.</p>
+                </div>
+                <div class="partner">
+                    <h3>Tesla</h3>
+                    <p>Инновации в транспорте и энергетике для космических проектов.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const video = document.querySelector('.background-video');
+        
+        window.addEventListener('load', () => {
+            const savedTime = localStorage.getItem('videoTime');
+            if (savedTime) {
+                video.currentTime = parseFloat(savedTime);
+            }
+        });
+
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('videoTime', video.currentTime);
+        });
+    </script>
+</body>
+</html>

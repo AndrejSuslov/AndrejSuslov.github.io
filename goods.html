@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX - Товары</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<video autoplay muted loop class="background-video">
+    <source src="spacex.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+</video>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="partners.html">Партнёры</a></li>
+                <li><a href="history.html">История</a></li>
+                <li><a href="goods.html">Товары</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="strategy.html">Стратегия</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="goods">
+            <h1>Наши разработки</h1>
+            <p>Ракеты и технологии, которые открывают путь к звёздам.</p>
+            <div class="goods-list">
+                <div class="item">
+                    <h3>Falcon 9</h3>
+                    <p>Многоразовая ракета-носитель для доставки грузов и экипажей на орбиту.</p>
+                </div>
+                <div class="item">
+                    <h3>Starship</h3>
+                    <p>Сверхтяжёлая ракета для межпланетных полётов и колонизации Марса.</p>
+                </div>
+                <div class="item">
+                    <h3>Starlink</h3>
+                    <p>Спутниковая сеть для глобального высокоскоростного интернета.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const video = document.querySelector('.background-video');
+        
+        window.addEventListener('load', () => {
+            const savedTime = localStorage.getItem('videoTime');
+            if (savedTime) {
+                video.currentTime = parseFloat(savedTime);
+            }
+        });
+
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('videoTime', video.currentTime);
+        });
+    </script>
+</body>
+</html>

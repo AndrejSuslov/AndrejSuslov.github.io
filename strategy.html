@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX - Стратегия</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video autoplay muted loop class="background-video">
+        <source src="spacex.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="partners.html">Партнёры</a></li>
+                <li><a href="history.html">История</a></li>
+                <li><a href="goods.html">Товары</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="strategy.html">Стратегия</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="strategy">
+            <h1>Стратегия SpaceX</h1>
+            <p>Инновационные подходы к продвижению миссий и вовлечению аудитории.</p>
+            <div class="strategy-list">
+                <div class="strategy-item">
+                    <h3>AR/VR Платформа</h3>
+                    <p>Виртуальные туры по Starship и Марсу через ARKit и Oculus. Интеграция с соцсетями, коллаборации с инфлюенсерами. Вызовы: затраты, доступность. Метрики: загрузки, вовлечённость.</p>
+                </div>
+                <div class="strategy-item">
+                    <h3>AI-Кампании</h3>
+                    <p>Персонализированные email через анализ данных. Сегментация, оптимизация контента. Вызовы: конфиденциальность, точность. Метрики: открываемость, конверсии.</p>
+                </div>
+                <div class="strategy-item">
+                    <h3>Соцсети</h3>
+                    <p>Контент о миссиях (образование, промо, интерактив). Партнёрства с блогерами. Вызовы: точность, адаптация. Метрики: рост подписчиков, упоминания.</p>
+                </div>
+                <div class="strategy-item">
+                    <h3>IoT "Космический Дом"</h3>
+                    <p>Умные устройства с данными SpaceX. Партнёрства или разработка. Вызовы: затраты, конкуренция. Метрики: продажи, узнаваемость.</p>
+                </div>
+                <div class="strategy-item">
+                    <h3>Краудсорсинг</h3>
+                    <p>Конкурсы на логотипы и названия миссий (#DesignForMars). Голосование, призы (мерч, трансляции). Вызовы: юр. аспекты, прозрачность. Метрики: участники, рост подписчиков.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const video = document.querySelector('.background-video');
+        window.addEventListener('load', () => {
+            const savedTime = localStorage.getItem('videoTime');
+            if (savedTime) {
+                video.currentTime = parseFloat(savedTime);
+            }
+        });
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('videoTime', video.currentTime);
+        });
+    </script>
+</body>
+</html>

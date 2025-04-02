@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX - Контакты</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<video autoplay muted loop class="background-video">
+    <source src="spacex.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+</video>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="partners.html">Партнёры</a></li>
+                <li><a href="history.html">История</a></li>
+                <li><a href="goods.html">Товары</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="strategy.html">Стратегия</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contacts">
+            <h1>Связаться с SpaceX</h1>
+            <p>Готовы отправиться в космос? Напишите нам!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Адрес</h3>
+                    <p>1 Rocket Road, Hawthorne, CA 90250, США</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@spacex.com">info@spacex.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Телефон</h3>
+                    <p>+1 (310) 363-6000</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const video = document.querySelector('.background-video');
+        
+        window.addEventListener('load', () => {
+            const savedTime = localStorage.getItem('videoTime');
+            if (savedTime) {
+                video.currentTime = parseFloat(savedTime);
+            }
+        });
+
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('videoTime', video.currentTime);
+        });
+    </script>
+</body>
+</html>
